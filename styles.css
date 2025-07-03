@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #0a0a1a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+}
+
+canvas {
+    background-color: #0f0f1f;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    margin-bottom: 2rem;
+}
+
+.controls {
+    width: 100%;
+    max-width: 800px;
+    background-color: #12122a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.control-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #2a2a4a;
+    border-radius: 3px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #4db8ff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(77, 184, 255, 0.7);
+    transition: all 0.2s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+}
+
+.planet-settings {
+    margin-top: 2rem;
+}
+
+.planet-settings h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.planet-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.planet-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color);
+    box-shadow: 0 0 10px var(--color);
+}
+
+.planet-control label {
+    width: 80px;
+    margin: 0;
+    color: #ccc;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(45deg, #4db8ff, #4d79ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(77, 184, 255, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(77, 184, 255, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#reset {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+#reset:hover {
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.5);
+}
+
+/* Glow effects for planets */
+@keyframes glow1 {
+    0%, 100% { box-shadow: 0 0 10px 2px rgba(77, 184, 255, 0.7); }
+    50% { box-shadow: 0 0 20px 5px rgba(77, 184, 255, 0.9); }
+}
+
+@keyframes glow2 {
+    0%, 100% { box-shadow: 0 0 10px 2px rgba(255, 159, 67, 0.7); }
+    50% { box-shadow: 0 0 20px 5px rgba(255, 159, 67, 0.9); }
+}
+
+@keyframes glow3 {
+    0%, 100% { box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.7); }
+    50% { box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.9); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    canvas {
+        height: 400px;
+    }
+    
+    .planet-control {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .planet-control label {
+        width: 100%;
+    }
+}

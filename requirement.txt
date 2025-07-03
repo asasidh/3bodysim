@@ -1,0 +1,54 @@
+"Neon Gravity" — 3-Body Simulator
+
+🧭 Goal:
+Create a browser-based simulation that visualizes gravitational interactions between three celestial bodies, with:
+
+Glowing orbits and trails
+
+Real-time physics updates
+
+Intuitive UI for adjusting speed, size, and mass
+
+🧱 Tech Stack:
+HTML5
+
+WebGL (via raw JS or lightweight lib like regl)
+
+JavaScript (no frameworks)
+
+CSS (neon glow with gradients and keyframes)
+
+⚙️ Core Features:
+🪐 Simulation Engine:
+Implements Newtonian physics for three-body interaction
+
+Uses requestAnimationFrame for real-time updates
+
+Body properties: position, velocity, acceleration, mass
+
+🎨 Aesthetic & Visuals:
+Neon-colored trails (orange, blue, yellow)
+
+Glow effect via fragment shader or blur + opacity CSS trick
+
+Dark space-themed background
+
+Smooth orbit rendering using points + lines + trails
+
+🧪 Controls (UI):
+Speed Slider
+
+Range: 0.1x – 5x
+
+Adjusts simulation time delta
+
+Planet Settings (x3):
+
+Size Slider (affects render radius)
+
+Mass Slider (affects gravity strength)
+
+Buttons:
+
+Start / Pause Simulation
+
