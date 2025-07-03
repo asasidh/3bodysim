@@ -232,6 +232,19 @@ function updatePlanets(deltaTime) {
         // Update position with scaled velocity
         planet.x += planet.vx * deltaTime * 0.5;
         planet.y += planet.vy * deltaTime * 0.5;
+
+        // Boundary collision check to keep planets within the canvas
+        const simWidth = canvas.width / 2;
+        const simHeight = canvas.height / 2;
+
+        if (planet.x + planet.radius > simWidth || planet.x - planet.radius < -simWidth) {
+            planet.vx *= -0.9; // Reverse velocity with some energy loss
+            planet.x = Math.max(-simWidth + planet.radius, Math.min(simWidth - planet.radius, planet.x));
+        }
+        if (planet.y + planet.radius > simHeight || planet.y - planet.radius < -simHeight) {
+            planet.vy *= -0.9; // Reverse velocity with some energy loss
+            planet.y = Math.max(-simHeight + planet.radius, Math.min(simHeight - planet.radius, planet.y));
+        }
         
         // Add current position to trail
         planet.trail.push({ x: planet.x, y: planet.y });
